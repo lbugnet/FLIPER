@@ -1,7 +1,9 @@
 # FLIPER SURFACE GRAVITY and NUMAX estimation
 
 author: Lisa Bugnet
+
 contact: lisa.bugnet@cea.fr
+
 This repository is the property of L. Bugnet (please see and cite Bugnet et al.,2018).
 
 The FLIPER python code is made for the estimation of surface gravity of Kepler
