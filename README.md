@@ -1,4 +1,4 @@
-# FLIPER SURFACE GRAVITY and NUMAX ESTIMATION
+# FLIPER SURFACE GRAVITY and NUMAX estimation
 
 This python code is made for the estimation of surface gravity of Kepler Solar-type
 oscillating targets with 0.1 < logg < 4.5 dex.
