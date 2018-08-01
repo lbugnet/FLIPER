@@ -8,8 +8,7 @@ The FLIPER python code is made for the estimation of surface gravity of Kepler
 Solar-type oscillating targets with 0.1 < logg < 4.5 dex.
 
 The user should first use the FLIPER class to calculate FliPer values
-from 0.2,0.7,7,20 and 50 muHz (see Bugnet et al.,2018)
-(see CALLING SEQUENCE at the end of this code).
+from 0.2,0.7,7,20 and 50 muHz (see Bugnet et al.,2018).
 These values are the parameters needed by the machine learning Random Forest
 (along with the effective temperature and the Kepler magnitude of the star).
 
