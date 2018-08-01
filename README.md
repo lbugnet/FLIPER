@@ -15,7 +15,7 @@ These values are the parameters needed by the machine learning Random Forest
 (along with the effective temperature and the Kepler magnitude of the star).
 
 The Random Forest regressors are already trained and stored in the
-"ML_logg_training_paper" and "ML_logg_training_paper_numax" files to estimate
+"ML_logg_training_paper" and "ML_numax_training_paper" files to estimate
 logg or numax. They should be download on this GitHub repository before running the FLIPER code.
 The estimation of surface gravity should be made by the use of the "ML" class
 (see CALLING SEQUENCE at the end of the code).
@@ -25,7 +25,7 @@ What you need:
 - The power density spectrum of the star filtered with a 80 days high pass filter.
 - The Kepler magnitude of the star
 - The effective temperature of the star (from Mathur et al., 2017 for instance)
-- The "ML_logg_training_paper" and "ML_logg_training_paper_numax" files containing the training of the Random Forest algorithms, to be dowload on GitHub.
+- The "ML_logg_training_paper" and "ML_numax_training_paper" files containing the training of the Random Forest algorithms, to be dowload on GitHub.
 
 
 
@@ -79,7 +79,7 @@ KP          =   kepmag
       KP      =   np.full((100),kepmag)                                                      
 
 
-    Estimation of surface gravity and/or numax from the "ML_logg_training_paper" or "ML_logg_training_paper_numax" file.
+    Estimation of surface gravity and/or numax from the "ML_logg_training_paper" or "ML_numax_training_paper" file.
 
 logg=ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_LOGG)
 numax=10**(ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_NUMAX))
