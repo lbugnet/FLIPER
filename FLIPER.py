@@ -211,13 +211,13 @@ class ML:
 
 ALL NEEDED INFORMATIONS:
 """
-#Paths to PSD computed from light curves filtered with 20 and 80 days
-psd_path_20             =   '/Volumes/TEMP/RG_DR25/K011/RESULTS_KADACS_COARSE_CheckSTATUS_filt_polfitseg960.000_20.0000d_ppm0_inpaint20/LC_CORR_FILT_INP/kplr011757076_1706_COR_PSD_filt_inp.fits'
-psd_path_80             =   '/Volumes/TEMP/RG_DR25/K011/RESULTS_KADACS_COARSE_CheckSTATUS_filt_polfitseg0_80.0000d_ppm0_inpaint20/LC_CORR_FILT_INP/kplr011757076_1706_COR_PSD_filt_inp.fits'
+#Paths to PSD fits files computed from light curves filtered with 20 and 80 days
+psd_path_20             =   '/???/???'
+psd_path_80             =   '/???/???'
 
 #Path to trained random forest (to be dowloaded on GitHub)
-PATH_TO_TRAINING_FILE_LOGG   =   '/Users/lbugnet/WORK/pythongoogletest/FLIPER_SCRIPTS_TO_PUT_ONLINE/ML_logg_training_paper'
-PATH_TO_TRAINING_FILE_NUMAX  =   '/Users/lbugnet/WORK/pythongoogletest/FLIPER_SCRIPTS_TO_PUT_ONLINE/ML_numax_training_paper'
+PATH_TO_TRAINING_FILE_LOGG   =   '/???/ML_logg_training_paper'
+PATH_TO_TRAINING_FILE_NUMAX  =   '/???/ML_numax_training_paper'
 #Give star parameters
 kepmag          =   12.349
 teff            =   4750.0698938311934
@@ -241,9 +241,11 @@ Fp07        =   Fliper_20_d.fp07[0]
 Fp7         =   Fliper_20_d.fp7[0]
 Fp20        =   Fliper_20_d.fp20[0]
 Fp50        =   Fliper_20_d.fp50[0]
+Teff        =   teff
+KP          =   kepmag
 
 """
-Compute 100 stars per star by taking into account uncertainties on parameters.   (OPTIONNAL)
+Compute 100 stars per star by taking into account uncertainties on parameters.   (OPTIONNAL, ONLY TO REPORDUCE PAPER)
 """
 Fp02    =   FLIPER().RANDOM_PARAMS(Fliper_80_d.fp02[0], Fliper_80_d.sig_fp02[0])
 Fp07    =   FLIPER().RANDOM_PARAMS(Fliper_20_d.fp07[0], Fliper_20_d.sig_fp07[0])
