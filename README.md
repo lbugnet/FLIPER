@@ -36,37 +36,37 @@ What you need:
     ALL NEEDED INFORMATIONS:
 
     Paths to PSD fits files computed from light curves filtered with 20 and 80 days
-psd_path_20             =   '/???/???'
-psd_path_80             =   '/???/???'
+    psd_path_20             =   '/???/???'
+    psd_path_80             =   '/???/???'
 
     Path to trained random forest (to be dowloaded on GitHub)
-PATH_TO_TRAINING_FILE_LOGG   =   '/???/ML_logg_training_paper'
-PATH_TO_TRAINING_FILE_NUMAX  =   '/???/ML_numax_training_paper'
+    PATH_TO_TRAINING_FILE_LOGG   =   '/???/ML_logg_training_paper'
+    PATH_TO_TRAINING_FILE_NUMAX  =   '/???/ML_numax_training_paper'
 
     Give star parameters
-kepmag          =   12.349
-teff            =   4750.0698938311934
-error_teff      =   55.844606659634337
+    kepmag          =   12.349
+    teff            =   4750.0698938311934
+    error_teff      =   55.844606659634337
 
 
 
     Open data from PSD_paths from 20 and 80 days light curves.
 
-star_tab_psd_20 =   DATA_PREPARATION().PSD_PATH_TO_PSD(psd_path_20)
-star_tab_psd_80 =   DATA_PREPARATION().PSD_PATH_TO_PSD(psd_path_80)
+    star_tab_psd_20 =   DATA_PREPARATION().PSD_PATH_TO_PSD(psd_path_20)
+    star_tab_psd_80 =   DATA_PREPARATION().PSD_PATH_TO_PSD(psd_path_80)
 
 
     Calculate FliPer values.
 
-Fliper_20_d =   FLIPER().Fp_20_days(star_tab_psd_20, kepmag)
-Fliper_80_d =   FLIPER().Fp_80_days(star_tab_psd_80, kepmag)
-Fp02        =   Fliper_80_d.fp02[0]
-Fp07        =   Fliper_20_d.fp07[0]
-Fp7         =   Fliper_20_d.fp7[0]
-Fp20        =   Fliper_20_d.fp20[0]
-Fp50        =   Fliper_20_d.fp50[0]
-Teff        =   teff
-KP          =   kepmag
+    Fliper_20_d =   FLIPER().Fp_20_days(star_tab_psd_20, kepmag)
+    Fliper_80_d =   FLIPER().Fp_80_days(star_tab_psd_80, kepmag)
+    Fp02        =   Fliper_80_d.fp02[0]
+    Fp07        =   Fliper_20_d.fp07[0]
+    Fp7         =   Fliper_20_d.fp7[0]
+    Fp20        =   Fliper_20_d.fp20[0]
+    Fp50        =   Fliper_20_d.fp50[0]
+    Teff        =   teff
+    KP          =   kepmag
 
       Compute 100 stars per star by taking into account uncertainties on parameters.   (OPTIONNAL, ONLY TO REPORDUCE PAPER)
 
@@ -81,5 +81,5 @@ KP          =   kepmag
 
     Estimation of surface gravity and/or numax from the "ML_logg_training_paper" or "ML_numax_training_paper" file.
 
-logg=ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_LOGG)
-numax=10**(ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_NUMAX))
+    logg=ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_LOGG)
+    numax=10**(ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_NUMAX))
