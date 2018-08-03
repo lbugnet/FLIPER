@@ -17,8 +17,8 @@ These values are the parameters needed by the machine learning Random Forest
 (along with the effective temperature and the Kepler magnitude of the star).
 
 The Random Forest regressors are already trained and stored in the
-"ML_logg_training_paper" and "ML_logg_training_paper_numax" files to estimate
-logg or numax. They should be download on GitHub (LINK?????) before running this code.
+"ML_logg_training_paper" and "ML_numax_training_paper" files to estimate
+logg or numax. They should be download on GitHub before running this code.
 The estimation of surface gravity should be made by the use of the "ML" class
 (see CALLING SEQUENCE at the end of this code).
 
@@ -27,8 +27,8 @@ What you need:
 - The power density spectrum of the star filtered with a 80 days high pass filter.
 - The Kepler magnitude of the star
 - The effective temperature of the star (from Mathur et al., 2017 for instance)
-- The "ML_logg_training_paper" file containing the training of the Random Forest,
-    to be dowload on https://????????
+- The "ML_logg_training_paper" and "ML_numax_training_paper" files containing the training of the Random Forests,
+    to be dowload on GitHub (https://github.com/lbugnet/FLIPER)
 
 A calling example is reported at the end of the code.
 """
@@ -176,8 +176,6 @@ class DATA_PREPARATION:
         star_tab_psd[:,0]   =   freq
         return star_tab_psd
 
-
-
 class ML:
     def __init__(self):
         self.nom = "ML estimate"
@@ -185,7 +183,7 @@ class ML:
 
     def PREDICTION(self, Teff, KP,F02, F07, F7, F20, F50,  path_to_training_file):
         """
-        Estimation of logg with machine learning (training given by 'ML_logg_training_paper' to be dowload in GitHub).
+        Estimation of logg/numax with machine learning (training given by 'ML_logg/numax_training_paper' to be dowload in GitHub).
         """
         listing         =   {'Teff': Teff, 'KP': KP,'lnF02': self.CONVERT_TO_LOG(F02), 'lnF07': self.CONVERT_TO_LOG(F07), 'lnF7': self.CONVERT_TO_LOG(F7), 'lnF20': self.CONVERT_TO_LOG(F20), 'lnF50': self.CONVERT_TO_LOG(F50)}
         df              =   pd.DataFrame(data=listing)
@@ -256,7 +254,7 @@ Teff    =   FLIPER().RANDOM_PARAMS(teff, error_teff)
 KP      =   np.full((100),kepmag)                                                      #no uncertainties on KP
 
 """
-Estimation of surface gravity and/or numax from the "ML_logg_training_paper" or "ML_logg_training_paper_numax" file.
+Estimation of surface gravity and/or numax from the "ML_logg_training_paper" or "ML_numax_training_paper" file.
 """
 logg=ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_LOGG)
 numax=10**(ML().PREDICTION(Teff, KP, Fp02, Fp07, Fp7, Fp20, Fp50, PATH_TO_TRAINING_FILE_NUMAX))
