@@ -23,7 +23,7 @@ The effective temperature of the star (from Mathur et al., 2017 for instance)
 The "ML_logg_training_paper" and "ML_numax_training_paper" files containing the training of the Random Forest algorithms, to be dowload on GitHub.
 
 
-### CALLING SEQUENCE
+## CALLING SEQUENCE
 
 Paths to PSD fits files computed from light curves filtered with 20 and 80 days
 ```
