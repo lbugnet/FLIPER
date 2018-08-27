@@ -63,7 +63,7 @@ Fp50        =   Fliper_20_d.fp50[0]
 Teff        =   teff
 KP          =   kepmag
 ```
-Compute 100 stars per star by taking into account uncertainties on parameters.   (OPTIONNAL, ONLY TO REPORDUCE PAPER)
+Compute 100 stars per star by taking into account uncertainties on parameters.   (OPTIONNAL, ONLY TO REPRODUCE PAPER)
 ```
 Fp02    =   FLIPER().RANDOM_PARAMS(Fliper_80_d.fp02[0], Fliper_80_d.sig_fp02[0])
 Fp07    =   FLIPER().RANDOM_PARAMS(Fliper_20_d.fp07[0], Fliper_20_d.sig_fp07[0])
